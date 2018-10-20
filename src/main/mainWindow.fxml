@@ -4,16 +4,17 @@
 <?import javafx.scene.input.*?>
 <?import javafx.scene.layout.BorderPane?>
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
-            xmlns="http://javafx.com/javafx/2.2" fx:controller="main.MainWindowController">
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="main.MainWindowController"
+            fx:id="mainBorderPane">
     <top>
         <MenuBar>
             <Menu mnemonicParsing="false" text="文件">
-                <MenuItem mnemonicParsing="false" text="新建">
+                <MenuItem fx:id="newMenuItem" mnemonicParsing="false" text="新建">
                     <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
                     </accelerator>
                 </MenuItem>
-                <MenuItem mnemonicParsing="false" text="打开">
+                <MenuItem fx:id="openMenuItem" mnemonicParsing="false" text="打开">
                     <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
                     </accelerator>

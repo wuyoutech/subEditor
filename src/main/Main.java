@@ -1,18 +1,20 @@
 package main;
 
 import javafx.application.Application;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.Parent;
-        import javafx.scene.Scene;
-        import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class Main extends Application {
+    public static Stage main;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        main = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("mainWindow.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("subEditor");
+        primaryStage.setScene(new Scene(root, 1024, 768));
         primaryStage.show();
     }
 
