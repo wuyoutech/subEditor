@@ -1,47 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="main.MainWindowController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainWindowController">
     <top>
         <MenuBar>
-            <Menu mnemonicParsing="false" text="文件">
-                <MenuItem fx:id="newMenuItem" mnemonicParsing="false" text="新建">
-                    <accelerator>
-                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
-                    </accelerator>
-                </MenuItem>
-                <MenuItem fx:id="openMenuItem" mnemonicParsing="false" text="打开">
-                    <accelerator>
-                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
-                    </accelerator>
-                </MenuItem>
-                <MenuItem mnemonicParsing="false" text="保存">
-                    <accelerator>
-                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
-                    </accelerator>
-                </MenuItem>
-                <MenuItem mnemonicParsing="false" text="另存为">
-                    <accelerator>
-                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP"/>
-                    </accelerator>
-                </MenuItem>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="退出">
-                    <accelerator>
-                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
-                    </accelerator>
-                </MenuItem>
-            </Menu>
-            <Menu mnemonicParsing="false" text="编辑">
-            </Menu>
-            <Menu mnemonicParsing="false" text="帮助">
+            <menus>
+                <Menu mnemonicParsing="false" text="文件">
+                    <items>
+                        <MenuItem fx:id="newMenuItem" mnemonicParsing="false" text="新建">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="openMenuItem" mnemonicParsing="false" text="打开">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="保存">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="另存为">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" text="退出">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="编辑">
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
 
-            </Menu>
+                </Menu>
+            </menus>
         </MenuBar>
     </top>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <bottom>
+                <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </bottom>
+        </BorderPane>
+    </center>
+    <right>
+        <Accordion prefWidth="300.0" BorderPane.alignment="CENTER">
+            <panes>
+                <TitledPane animated="false" text="untitled 1">
+                    <content>
+                        <GridPane hgap="10.0" vgap="10.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <padding>
+                                <Insets bottom="25" left="25" right="25" top="25" />
+                            </padding>
+                           <children>
+                               <Label text="模板" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                               <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                               <Label text="Font" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                           </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" text="untitled 2">
+                    <content>
+                        <GridPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" text="untitled 3">
+                    <content>
+                        <GridPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+    </right>
 </BorderPane>
