@@ -24,7 +24,6 @@ public class V4PlusStyles {
         }
     }
 
-
     public void V4PlusStyles(String s){ setFormat(s);  }
 
     public void V4PlusStyles(){ }
