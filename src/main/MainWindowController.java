@@ -19,7 +19,13 @@ public class MainWindowController implements Initializable {
     @FXML private MenuItem newMenuItem;
     @FXML private MenuItem openMenuItem;
     @FXML private ComboBox<String> fontComboBox;
-    @FXML private TableView mainTableView;
+    @FXML private TableView<SubtitleLine> mainTableView;
+
+    @FXML private TableColumn<SubtitleLine,String> tableColumnID;
+    @FXML private TableColumn<SubtitleLine,String> tableColumnStartTime;
+    @FXML private TableColumn<SubtitleLine,String> tableColumnEndTime;
+    @FXML private TableColumn<SubtitleLine,String> tableColumnStyle;
+    @FXML private TableColumn<SubtitleLine,String> tableColumnText;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -27,20 +33,18 @@ public class MainWindowController implements Initializable {
         exitMenuItem.setOnAction(t -> System.exit(0));
         openMenuItem.setOnAction(t->GlobalInfo.open());
 
+        /*------------------------Property Window--------------------------*/
         ObservableList<String> fonts = FXCollections.observableArrayList();
         GraphicsEnvironment e = GraphicsEnvironment.getLocalGraphicsEnvironment();
         String[] fontName = e.getAvailableFontFamilyNames();
         fonts.addAll(Arrays.asList(fontName));
         fontComboBox.setItems(fonts);
 
-        TableColumn lineNo = new TableColumn("#");
-        TableColumn startTime = new TableColumn("开始时间");
-        TableColumn endTime = new TableColumn("结束时间");
-        TableColumn speed =new TableColumn("字/秒");
-        TableColumn style = new TableColumn("样式");
-        TableColumn text = new TableColumn("文本");
-        mainTableView.getColumns().addAll(lineNo,startTime,endTime,speed,style,text);
 
 
+        /*------------------------main table------------------------------------*/
+        tableColumnID.setCellValueFactory(cellData->cellData.getValue().getId());
+
+        mainTableView.setItems(GlobalInfo.SubtitleLines);
     }
 }

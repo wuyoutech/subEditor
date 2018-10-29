@@ -1,5 +1,7 @@
 package utils;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.stage.FileChooser;
 import main.Main;
 
@@ -14,6 +16,8 @@ public class GlobalInfo {
     public static ScriptInfo scriptInfo = new ScriptInfo();
 
     public static V4PlusStyles styles = new V4PlusStyles();
+
+    public static ObservableList<SubtitleLine> SubtitleLines = FXCollections.observableArrayList();
 
 
     public static void open(){
