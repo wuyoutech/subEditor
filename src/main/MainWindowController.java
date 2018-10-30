@@ -40,10 +40,12 @@ public class MainWindowController implements Initializable {
         fonts.addAll(Arrays.asList(fontName));
         fontComboBox.setItems(fonts);
 
-
-
         /*------------------------main table------------------------------------*/
         tableColumnID.setCellValueFactory(cellData->cellData.getValue().getId());
+        tableColumnStartTime.setCellValueFactory(cellData->cellData.getValue().getStartTime());
+        tableColumnEndTime.setCellValueFactory(cellData->cellData.getValue().getEndTime());
+        tableColumnStyle.setCellValueFactory(cellData->cellData.getValue().getStyle());
+        tableColumnText.setCellValueFactory(cellData->cellData.getValue().getText());
 
         mainTableView.setItems(GlobalInfo.SubtitleLines);
     }

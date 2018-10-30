@@ -19,4 +19,17 @@ public class SubtitleLine {
         return this.id;
     }
 
+    public StringProperty getStartTime(){
+        return this.startTime;
+    }
+    public StringProperty getEndTime(){
+        return this.endTime;
+    }
+    public StringProperty getStyle(){
+        return this.style;
+    }
+    public StringProperty getText(){
+        return this.text;
+    }
+
 }
